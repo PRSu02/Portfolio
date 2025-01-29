@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            .resume-link {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: white;
+                border: 2px solid black;
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                text-align: center;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+            .resume-link:hover {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100090200932234" target="_blank"><img src="fb.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com/in/priyangshu-deka/" target="_blank"><img src="linkdn.png" alt="LinkedIn"></a>
+            <a href="https://github.com/PRSu02" target="_blank" rel="noopener noreferrer"><img src="github.png" alt="GitHub"></a>
+            <!-- <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src="fb.png" alt="Facebook"></a> -->
+
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h2 class="responsive-text" id="animated-text"></h2>
+    </section>
+
+    <section id="about">
+        <!-- <h2>About Me</h2> -->
+        <img src="imgg.png" alt="Profile Picture" class="profile-img">
+        <p>Hello, Myself Priyangshu Deka. I am a B.Tech undergraduate at NIT Silchar. I have a strong passion for AI, Machine Learning and Full-stake Development. I enjoy solving complex problems, building scalable projects and explorung emerging technologies </p>
+        <a href="https://drive.google.com/file/d/1b9ExWvg2S9weEYRcWL4wMACZL1sWls6a/view?usp=sharing" target="_blank" class="resume-link">Open Resume</a>
+
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <img src="tran.jpeg" alt="Project 1 Image" class="project-img">
+            <h3>Transacto</h3>
+            <h5>HTML, CSS, JavaScript, Flask, MySQL</h5>
+            <p>The project aims to bolster payment security in response to rising credit card fraud. It involves verifying transactions
+                by utilising MAC addresses, which are unique hardware identifiers. The authenticity integrity of each
+                transaction is ensured by confirming the payment request origin as trusted device.
+              The application is built with the Flask micro-framework, providing a lightweight yet modular architecture that
+                facilitates future scalability and seamless integration with the frontend.</p>
+        </div>
+        <div class="project">
+            <img src="medd.jpeg" alt="Project 2 Image" class="project-img">
+            <h3>Mededge</h3>
+            <h5>React, Vite, CSS, Flask, Pyramid, SQLite, SQLAlchemy</h5>
+            <p>The project is a healthcare website to automate medical systems using edge computing for reduced latency and
+                integration of IOT devices.
+                – The cloud server behaves as the metadata server and the unversities and hospitals are the edge nodes which
+                interact directly to the users.
+                – Flask and Pyramid were used to develop RESTful APIs for data interaction, while Tornado was used for handling
+                asynchronous tasks and real-time communication.</p>
+        </div>
+        <div class="project">
+            <img src="recom.jpeg" alt="Project 3 Image" class="project-img">
+            <h3>Real-Time Product Recommender</h3>
+            <h5>Python, Flask, YOLO, ResNet-50, OpenCV, HTML, CSS, JS</h5>
+            <p>The project focuses on real-time object detection from a paused frame of a video player and delivering similar product
+                recommendations, similar to Amazon Prime Video’s ”X-Ray feature.”
+                ∗ The backend was implemented using the Flask micro-framework, integrated seamlessly with the frontend. We
+                used Base64 encoding to transmit image data across endpoints efficiently.
+                ∗ The ML model uses the YOLO model for object detection ResNet-50 model for feature extraction. Product
+                recommendations are generated from a database by calculating similarity using the Cosine-Similarity metric.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <h4>kashyapprince325@gmail.com</h4>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "Hello, Myself Priyangshu";
+            let index = 0;
+            const speed = 100; // Speed of text animation
+            
+            function typeWriter() {
+                if (index < text.length) {
+                    document.getElementById("animated-text").innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
